@@ -12,6 +12,11 @@ import sqlite3
 app = Flask(__name__)
 CORS(app)  # Permite requisições de outros domínios (frontend)
 
+# Rota raiz
+@app.route('/')
+def index():
+    return "Bem-vindo à API da Escola de Vela!"
+
 # Função para conectar ao banco de dados
 def get_db_connection():
     conn = sqlite3.connect('curso_vela.db')
